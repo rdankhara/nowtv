@@ -1,4 +1,5 @@
 import {getMembers, getMessages} from './data';
+import {toMap} from './core/arrayExtensions';
 
 export default function getChatLog() {
   return Promise.resolve([{
@@ -12,34 +13,30 @@ export default function getChatLog() {
   }]);
 };
 
-export const getChatMessages = () => {
-    return new Promise(resolve => {
-        Promise.all([getMembers(), getMessages()])
-        .then(asyncResult => {
-          console.log(asyncResult);
-          var result = extractChatMessages(...asyncResult);
-          resolve(result);
-        });
-    });
-}
-
 const extractChatMessages = (members, messages) => {
-    console.log(members, messages);
-  const membersMap = new Map();
-  console.log(members[0], messages[0]);
-  members.forEach(m => membersMap.set(m.id, m));
-
-  const resultMessages = messages.map(message => {
-      const member = membersMap.get(message.userId);
+    const membersMap = toMap(members, "id");
+    const resultMessages = messages.map(message => {
+    const member = membersMap.get(message.userId);
 
       return {
           messageId: message.id,
           userId: message.userId,
           fullName: `${member.firstName} ${member.lastName}`,
-          timestamp: message.timestamp,
+          timestamp: new Date(message.timestamp),
           email: member.email,
           avatar: member.avatar
       };
   });
   return resultMessages;
+}
+
+export const getChatMessages = () => {
+    return new Promise(resolve => {
+        Promise.all([getMembers(), getMessages()])
+        .then(asyncResult => {
+          var result = extractChatMessages(...asyncResult)
+            .sort((a, b) => a.timestamp.valueOf() - b.timestamp.valueOf());
+          resolve(result);
+        });
+    });
 }

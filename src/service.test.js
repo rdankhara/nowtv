@@ -14,15 +14,21 @@ it('returns the correct format', () => {
   });
 });
 
+describe('getChatMessages' , ()=> {
+  //   const messages = require('./messages.json').map(m => {
+  //     return {...m, timestamp: new Date(m.timestamp)};
+  //   }).sort((a, b) ;
+  // const members = require('./members.json')
+  it('returns messages with correct property and order', done => {
+    return getChatMessages().then(data => {
 
-it('works with resolves', done => {
-  
-  return getChatMessages().then(data => {
-    const message =  data[0];
-    console.log(message);
-    expect(true).toBe(true);
-    done();
+      const message = data[0];
+      expect(message.fullName).toBe('Amanda Baker');
+      expect(message.messageId).toBe('fa0ca158-42ae-435d-8c32-13f4cb7b8de8');
+      expect(message.userId).toEqual('73f30d93-f87b-45ea-bda5-60fa4b3716b5');
+      expect(message.avatar).toBe(null);
+      expect(message.email).toBe('abakera@craigslist.org');
+      done();
+    });
   });
-  // expect.assertions(1);
-  // return expect(getChatMessages).resolves[0].messageId.toEqual('cd445e6d-e514-424f-ba8f-16ec842002c6');
 });

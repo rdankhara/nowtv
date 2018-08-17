@@ -45,7 +45,7 @@ Feel free to create new files to help you complete these tasks. Please ask befor
       more nicer UI, 
       paging or virtulisation to limit amount of data,
       automated end to end tests,
-      I would use redux observable
+      I would use redux observable as it allows cancelling which helps saving rendering thread cpu cycle from rendering unwanted UI.
     )
   - If you were to deploy this application (or any web application) to production, how would you personally do it?
   (ideally it should be web pack command npm run build and should create prod build file which should be then copied to prod bin folder by CI TeamCity or Jenkin)

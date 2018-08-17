@@ -16,6 +16,7 @@ it('should join result', ()=> {
     expect(output[0].name).toEqual("name1");
 });
 
+
 it('should merge message', ()=> {
     const message = require('./messages.json');
     const members = require('./members.json');

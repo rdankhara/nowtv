@@ -15,10 +15,12 @@ class Messages extends Component{
     }
     render(){
         const result = this.state.messages.map(m => {
-            return <Message key={m.id} {...m}/>});
+            return <Message key={m.messageId} {...m}/>});
         return(
             <div>
+                <ul>
                 {result}
+                </ul>
             </div>
         )
     }
