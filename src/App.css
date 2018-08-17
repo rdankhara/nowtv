@@ -18,6 +18,11 @@
   font-size: large;
 }
 
+.ChatMessage {
+  border : 1px solid saddlebrown;
+  box-shadow: cadetblue
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

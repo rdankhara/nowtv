@@ -1,8 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import {shallow, configure} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-15';
+import App from './app';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+configure({adapter: new Adapter()});
+
+describe('App', ()=>{
+    const app = shallow(<App/>);
+
+    it('renders App component correctly', ()=> {
+        expect(app).toMatchSnapshot();
+    });
 });

@@ -40,6 +40,14 @@ Feel free to create new files to help you complete these tasks. Please ask befor
   - How would you achieve this with Redux?
   - How would you handle an error from the API?
   - If you were to continue this application, what would you add?
+   (
+      I would add busy loader for async actions, 
+      more nicer UI, 
+      paging or virtulisation to limit amount of data,
+      automated end to end tests,
+      I would use redux observable
+    )
   - If you were to deploy this application (or any web application) to production, how would you personally do it?
+  (ideally it should be web pack command npm run build and should create prod build file which should be then copied to prod bin folder by CI TeamCity or Jenkin)
   - Finally, what did you think of the test? 😀
-
+(Test is good)
