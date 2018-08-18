@@ -28,6 +28,9 @@ describe('getChatMessages' , ()=> {
       expect(message.userId).toEqual('73f30d93-f87b-45ea-bda5-60fa4b3716b5');
       expect(message.avatar).toBe(null);
       expect(message.email).toBe('abakera@craigslist.org');
+      expect(message.timestamp.getDate()).toEqual(24);
+      expect(message.timestamp.getMonth()).toEqual(1);
+      expect(message.timestamp.getYear()).toEqual(116);
       done();
     });
   });

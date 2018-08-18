@@ -7,6 +7,43 @@ li {
   padding: 20px;
 }
 
+p {
+  margin: 5px;
+}
+.flex-container {
+  display: flex;
+}
+
+.avatar {
+  width:100px;
+  height: 100px;
+  background-image: url('defaultAvatar.png');
+  background-size: cover;
+  margin-right: 10px;
+}
+
+.message-container{
+  display: flex;
+  flex-flow: column;
+}
+
+.message {
+  margin:0px;
+  height: 100px;
+  background-color: beige;
+  padding: 5px;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+
+.timestamp {
+  align-self: flex-end;
+}
+.avatar:hover{
+  cursor: pointer;
+}
+
+
 /* Tooltip container */
 .tooltip {
   position: relative;
@@ -53,3 +90,4 @@ li {
   visibility: visible;
   opacity: 1;
 }
+

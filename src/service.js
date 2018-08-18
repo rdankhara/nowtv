@@ -21,6 +21,7 @@ const extractChatMessages = (members, messages) => {
       return {
           messageId: message.id,
           userId: message.userId,
+          message : message.message,
           fullName: `${member.firstName} ${member.lastName}`,
           timestamp: new Date(message.timestamp),
           email: member.email,

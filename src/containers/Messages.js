@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Message from './components/Message';
 import {getChatMessages} from '../service';
+import './Messages.css';
 
 class Messages extends Component{
     constructor(props){
@@ -18,7 +19,7 @@ class Messages extends Component{
             return <Message key={m.messageId} {...m}/>});
         return(
             <div>
-                <ul>
+                <ul className="Messages">
                 {result}
                 </ul>
             </div>

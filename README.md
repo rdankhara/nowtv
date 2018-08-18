@@ -41,9 +41,13 @@ Feel free to create new files to help you complete these tasks. Please ask befor
   - How would you handle an error from the API?
   - If you were to continue this application, what would you add?
    (
-      I would add busy loader for async actions, 
-      more nicer UI, 
-      paging or virtulisation to limit amount of data,
+      - I would add busy loader for async actions,
+      - stylename should be defined as const 
+      - I would use sass for css
+      - paging or virtulisation to limit amount of data,
+      - filter functionality
+      - more nicer UI, 
+
       automated end to end tests,
       I would use redux observable as it allows cancelling which helps saving rendering thread cpu cycle from rendering unwanted UI.
     )

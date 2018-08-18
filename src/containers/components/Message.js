@@ -1,20 +1,25 @@
 import React from 'react';
 import './Message.css';
-
+import defaultAvatar from './defaultAvatar.png';
 const Message = (props) => {
     return(
         <li>
-            <article className="Message">
+            <article className="flex-container">
             
-                <div class="tooltip">
+                {/* <div class="tooltip">
                     <span class="tooltiptext">{props.email}</span>        
+                </div> */}
+                <div className="avatar-container">
+                    <a className="tooltip">
+                        <img src={props.avatar} alt="" className="avatar tip" />
+                        <span className="tooltiptext">{props.email}</span>
+                    </a>
+                    <p className="fullName">{props.fullName}</p>
                 </div>
-                <img src={props.avatar} />
-                <p>{props.messageId}</p>
-                <p>{props.fullName}</p>
-                <p>{props.timestamp.toLocaleDateString()}</p>
-                <p>{props.userId}</p>
-                <p>{props.email}</p>                
+                <div className="message-container">
+                    <p className="message">{props.message}</p>
+                    <p className="timestamp">{props.timestamp.toDateString()}</p>
+                </div>
             </article>
         </li>
     );
