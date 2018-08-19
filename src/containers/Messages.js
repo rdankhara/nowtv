@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Message from './components/Message';
-import {getMessageAction} from '../reducers/actions';
+import * as messageActions from '../reducers/messageActions';
 import {getChatMessages} from '../service';
 import './Messages.css';
 
@@ -12,13 +12,14 @@ class Messages extends Component{
     }
 
     componentDidMount(){
-        getChatMessages().then(messages => {
-            this.setState({messages});
-        })
+        // getChatMessages().then(messages => {
+        //     this.setState({messages});
+        // })
+        this.props.getMessages();
     }
 
     render(){
-        const result = this.state.messages.map(m => {
+        const result = this.props.messages.map(m => {
             return <Message key={m.messageId} {...m}/>});
         return(
             <div className="container">
@@ -31,13 +32,15 @@ class Messages extends Component{
 }
 
 const mapStateToProps = (state) => {
+    console.log('mapstatetoprops', state);
     return {
-        messages: state.messages
+        isFetching : state.message.isFetching,
+        messages: state.message.messages
     }
 }
 const mapDispatchToProps = dispatch => {
     return {
-        getMessages : () => dispatch(getMessageAction())
+        getMessages : () => dispatch(messageActions.getMessagesAsync())
     };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Messages);

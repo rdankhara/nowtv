@@ -5,10 +5,10 @@ import thunk from 'redux-thunk';
 const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
 
 //use below to combine more than one reducers
- const rootReducer = combineReducers({
-     messageReducer
- });
+const rootReducer = combineReducers({
+  message : messageReducer
+});
 
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
 
-export default store;
+export const appState = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
+export default appState;

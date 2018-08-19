@@ -2,19 +2,20 @@ import messageReducer from './messageReducer';
 import * as consts from './constants';
 
 describe('Message Reducer', ()=> {
-    
-    it('should return empty state when state is undefined and type is GET_MESSAGE', ()=>{
-        const actual = messageReducer(undefined, {type: consts.GET_MESSSAGE});
-        expect(Array.isArray(actual)).toBe(true);
+    const initialState = {isFetching : false, messages : []};
+    it('should return isFetching true when type is GET_MESSAGE_INIT', ()=>{
+        const actual = messageReducer(initialState, {type: consts.GET_MESSAGE_INIT});
+        expect(actual.isFetching).toBe(true);
     })
 
-    it('should return payload as state when type is GET_MESSAGE', ()=>{
+    it('should return payload as state when type is GET_MESSAGE_SUCCESS', ()=>{
         const payload = [{messageId: '', userId: '', fullName:''}];
-        const action = {type: consts.GET_MESSSAGE, payload:payload};
-        const actual = messageReducer(undefined, action);
-        expect(Array.isArray(actual)).toBe(true);
-        expect(actual[0].hasOwnProperty("messageId")).toBe(true);
-        expect(actual[0].hasOwnProperty("userId")).toBe(true);
-        expect(actual[0].hasOwnProperty("fullName")).toBe(true);
+        const action = {type: consts.GET_MESSAGE_SUCCESS, payload:payload};
+        
+        const actual = messageReducer(initialState, action);
+        expect(actual.isFetching).toBe(false);
+        expect(actual.messages[0].hasOwnProperty("messageId")).toBe(true);
+        expect(actual.messages[0].hasOwnProperty("userId")).toBe(true);
+        expect(actual.messages[0].hasOwnProperty("fullName")).toBe(true);
     })    
 });
