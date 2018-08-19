@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import Message from './components/Message';
+import {getMessageAction} from '../reducers/actions';
 import {getChatMessages} from '../service';
 import './Messages.css';
 
@@ -14,6 +16,7 @@ class Messages extends Component{
             this.setState({messages});
         })
     }
+
     render(){
         const result = this.state.messages.map(m => {
             return <Message key={m.messageId} {...m}/>});
@@ -27,4 +30,14 @@ class Messages extends Component{
     }
 }
 
-export default Messages;
+const mapStateToProps = (state) => {
+    return {
+        messages: state.messages
+    }
+}
+const mapDispatchToProps = dispatch => {
+    return {
+        getMessages : () => dispatch(getMessageAction())
+    };
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Messages);

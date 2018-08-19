@@ -1,6 +1,5 @@
 import React from 'react';
 import './Message.css';
-import defaultAvatar from './defaultAvatar.png';
 const Message = (props) => {
     return(
         <li>
@@ -13,7 +12,7 @@ const Message = (props) => {
                 </div>
                 <div className="message-container">
                     <h2 className="fullName">{props.fullName}</h2>
-                    <h5 className="timestamp">{props.timestamp.toDateString()}</h5>
+                    <h5 className="timestamp">{ props.timestamp ? props.timestamp.toDateString() : ''}</h5>
                     <p className="message">{props.message}</p>
                 </div>
             </article>

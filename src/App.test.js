@@ -11,4 +11,8 @@ describe('App', ()=>{
     it('renders App component correctly', ()=> {
         expect(app).toMatchSnapshot();
     });
+
+    it('contains a Messages component', () => {
+        expect(app.find('Connect(Messages)').exists()).toBe(true);
+    });
 });

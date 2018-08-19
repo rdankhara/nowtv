@@ -17,8 +17,14 @@ p {
 }
 
 a {
+  outline: 0px;
   outline-width: 0px;
   outline-style: none;
+}
+
+a:hover, a:focus, a:active {
+  text-decoration: none;
+  outline: 0px;
 }
 
 a:focus{

@@ -38,10 +38,16 @@ Feel free to create new files to help you complete these tasks. Please ask befor
 
 4. Bonus Questions:
   - How would you achieve this with Redux?
+  (
+    add packages redux and react-redux
+    use provider component and set root state
+    use redux-thunk or redux-observable as middleware to handle async operation. (used redux thunk as you are not using redux observable)
+  )
   - How would you handle an error from the API?
   - If you were to continue this application, what would you add?
    (
       - make it responsive to adapt different screen size
+      - might extract avatar to its own functional component
       - I would add busy loader for async actions,
       - stylename should be defined as const 
       - I would use sass for css
