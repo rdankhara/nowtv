@@ -2,19 +2,15 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Message from './components/Message';
 import * as messageActions from '../reducers/messageActions';
-import {getChatMessages} from '../service';
 import './Messages.css';
 
-class Messages extends Component{
+export class Messages extends Component{
     constructor(props){
         super(props);
         this.state = {messages : []};
     }
 
     componentDidMount(){
-        // getChatMessages().then(messages => {
-        //     this.setState({messages});
-        // })
         this.props.getMessages();
     }
 
@@ -32,12 +28,9 @@ class Messages extends Component{
 }
 
 const mapStateToProps = (state) => {
-    console.log('mapstatetoprops', state);
-    return {
-        isFetching : state.message.isFetching,
-        messages: state.message.messages
-    }
+    return state.message;
 }
+
 const mapDispatchToProps = dispatch => {
     return {
         getMessages : () => dispatch(messageActions.getMessagesAsync())
