@@ -1,10 +1,9 @@
 
 li {
-  border: 1px solid #ff9999;
-  border-radius: 10px;
   list-style-type: none;
   margin-bottom: 10px;
   padding: 20px;
+  max-width: 600px;
 }
 
 p {
@@ -12,6 +11,19 @@ p {
 }
 .flex-container {
   display: flex;
+  padding:15px;
+  margin:0px;
+  background-color: rgb(180, 175, 175)
+}
+
+a {
+  outline-width: 0px;
+  outline-style: none;
+}
+
+a:focus{
+  outline-width: 0px;
+  outline-style: none;
 }
 
 .avatar {
@@ -29,21 +41,30 @@ p {
 
 .message {
   margin:0px;
-  height: 100px;
-  background-color: beige;
   padding: 5px;
-  border: 1px solid #555;
   border-radius: 5px;
 }
 
 .timestamp {
-  align-self: flex-end;
+  font-size: 14px;
+  font-weight: bold;
+  margin:0px;
+}
+
+.timestamp::before{
+  content: '# ';
+  color:blue;
 }
 .avatar:hover{
   cursor: pointer;
 }
 
-
+.fullName{
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0px;
+  padding: 0 px;
+}
 /* Tooltip container */
 .tooltip {
   position: relative;
@@ -54,11 +75,11 @@ p {
 /* Tooltip text */
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 120px;
-  background-color: #555;
+  width: auto;
+  background-color:rgb(180, 175, 175);
   color: #fff;
   text-align: center;
-  padding: 5px 0;
+  padding: 5px;
   border-radius: 6px;
 
   /* Position the tooltip text */
@@ -82,7 +103,7 @@ p {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #555 transparent transparent transparent;
+  border-color: rgb(180, 175, 175) transparent transparent transparent;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */

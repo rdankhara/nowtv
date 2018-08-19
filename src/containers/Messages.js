@@ -18,7 +18,7 @@ class Messages extends Component{
         const result = this.state.messages.map(m => {
             return <Message key={m.messageId} {...m}/>});
         return(
-            <div>
+            <div className="container">
                 <ul className="Messages">
                 {result}
                 </ul>

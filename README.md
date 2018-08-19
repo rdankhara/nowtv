@@ -41,6 +41,7 @@ Feel free to create new files to help you complete these tasks. Please ask befor
   - How would you handle an error from the API?
   - If you were to continue this application, what would you add?
    (
+      - make it responsive to adapt different screen size
       - I would add busy loader for async actions,
       - stylename should be defined as const 
       - I would use sass for css

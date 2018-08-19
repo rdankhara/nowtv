@@ -5,20 +5,16 @@ const Message = (props) => {
     return(
         <li>
             <article className="flex-container">
-            
-                {/* <div class="tooltip">
-                    <span class="tooltiptext">{props.email}</span>        
-                </div> */}
                 <div className="avatar-container">
                     <a className="tooltip">
                         <img src={props.avatar} alt="" className="avatar tip" />
                         <span className="tooltiptext">{props.email}</span>
                     </a>
-                    <p className="fullName">{props.fullName}</p>
                 </div>
                 <div className="message-container">
+                    <h2 className="fullName">{props.fullName}</h2>
+                    <h5 className="timestamp">{props.timestamp.toDateString()}</h5>
                     <p className="message">{props.message}</p>
-                    <p className="timestamp">{props.timestamp.toDateString()}</p>
                 </div>
             </article>
         </li>
