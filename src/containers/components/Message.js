@@ -11,7 +11,7 @@ const Message = (props) => {
                 <div className="message-container">
                     <h2 className="fullName">{props.fullName}</h2>
                     { props.timestamp && 
-                        <h5 className="timestamp">props.timestamp.toDateString()</h5>
+                        <h5 className="timestamp">{props.timestamp.toDateString()}</h5>
                     }
                     <p className="message">{props.message}</p>
                 </div>
