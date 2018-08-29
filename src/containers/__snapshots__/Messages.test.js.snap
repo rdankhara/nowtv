@@ -24,7 +24,15 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "getMessages": [Function],
+      "dispatch": [Function],
+      "isFetching": false,
+      "messages": Array [
+        Object {
+          "email": "em",
+          "messageId": "mid",
+          "userId": "uid",
+        },
+      ],
       "store": Object {
         "clearActions": [Function],
         "dispatch": [Function],
@@ -63,7 +71,15 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "getMessages": [Function],
+        "dispatch": [Function],
+        "isFetching": false,
+        "messages": Array [
+          Object {
+            "email": "em",
+            "messageId": "mid",
+            "userId": "uid",
+          },
+        ],
         "store": Object {
           "clearActions": [Function],
           "dispatch": [Function],

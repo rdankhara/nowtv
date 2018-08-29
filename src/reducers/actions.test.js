@@ -4,7 +4,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
 const createMockStore = configureMockStore([thunk]);
-const store = createMockStore({message : })
+const store = createMockStore({message :{}})
 it('creates an action to getMessages', ()=>{
     const expectedAction = {type: consts.GET_MESSSAGE};
     expect(actions.getMessageAction()).toEqual(expectedAction);

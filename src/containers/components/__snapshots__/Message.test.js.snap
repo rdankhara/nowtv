@@ -15,25 +15,20 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <article
-        className="flex-container">
-        <div
-                className="avatar-container">
-                <a
-                        className="tooltip">
-                        <img
-                                alt=""
-                                className="avatar tip"
-                                src={undefined} />
-                        <span
-                                className="tooltiptext" />
-                </a>
-        </div>
+        className="flexContainer">
+        <a
+                className="tooltip">
+                <img
+                        alt=""
+                        className="avatar tip"
+                        src={undefined} />
+                <span
+                        className="tooltiptext" />
+        </a>
         <div
                 className="message-container">
                 <h2
                         className="fullName" />
-                <h5
-                        className="timestamp" />
                 <p
                         className="message" />
         </div>
@@ -46,29 +41,24 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <div
-            className="avatar-container">
-            <a
-                        className="tooltip">
-                        <img
-                                    alt=""
-                                    className="avatar tip"
-                                    src={undefined} />
-                        <span
-                                    className="tooltiptext" />
-            </a>
-</div>,
+          <a
+            className="tooltip">
+            <img
+                        alt=""
+                        className="avatar tip"
+                        src={undefined} />
+            <span
+                        className="tooltiptext" />
+</a>,
           <div
             className="message-container">
             <h2
                         className="fullName" />
-            <h5
-                        className="timestamp" />
             <p
                         className="message" />
 </div>,
         ],
-        "className": "flex-container",
+        "className": "flexContainer",
       },
       "ref": null,
       "rendered": Array [
@@ -77,7 +67,129 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <a
+            "children": Array [
+              <img
+                alt=""
+                className="avatar tip"
+                src={undefined} />,
+              <span
+                className="tooltiptext" />,
+            ],
+            "className": "tooltip",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "",
+                "className": "avatar tip",
+                "src": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+                "className": "tooltiptext",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "span",
+            },
+          ],
+          "type": "a",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h2
+                className="fullName" />,
+              undefined,
+              <p
+                className="message" />,
+            ],
+            "className": "message-container",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+                "className": "fullName",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "h2",
+            },
+            undefined,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+                "className": "message",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "article",
+    },
+    "type": "li",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <article
+          className="flexContainer">
+          <a
+                    className="tooltip">
+                    <img
+                              alt=""
+                              className="avatar tip"
+                              src={undefined} />
+                    <span
+                              className="tooltiptext" />
+          </a>
+          <div
+                    className="message-container">
+                    <h2
+                              className="fullName" />
+                    <p
+                              className="message" />
+          </div>
+</article>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <a
               className="tooltip">
               <img
                             alt=""
@@ -86,10 +198,19 @@ ShallowWrapper {
               <span
                             className="tooltiptext" />
 </a>,
-            "className": "avatar-container",
-          },
-          "ref": null,
-          "rendered": Object {
+            <div
+              className="message-container">
+              <h2
+                            className="fullName" />
+              <p
+                            className="message" />
+</div>,
+          ],
+          "className": "flexContainer",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
@@ -134,197 +255,6 @@ ShallowWrapper {
             ],
             "type": "a",
           },
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <h2
-                className="fullName" />,
-              <h5
-                className="timestamp" />,
-              <p
-                className="message" />,
-            ],
-            "className": "message-container",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": undefined,
-                "className": "fullName",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "h2",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "",
-                "className": "timestamp",
-              },
-              "ref": null,
-              "rendered": "",
-              "type": "h5",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": undefined,
-                "className": "message",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "p",
-            },
-          ],
-          "type": "div",
-        },
-      ],
-      "type": "article",
-    },
-    "type": "li",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <article
-          className="flex-container">
-          <div
-                    className="avatar-container">
-                    <a
-                              className="tooltip">
-                              <img
-                                        alt=""
-                                        className="avatar tip"
-                                        src={undefined} />
-                              <span
-                                        className="tooltiptext" />
-                    </a>
-          </div>
-          <div
-                    className="message-container">
-                    <h2
-                              className="fullName" />
-                    <h5
-                              className="timestamp" />
-                    <p
-                              className="message" />
-          </div>
-</article>,
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <div
-              className="avatar-container">
-              <a
-                            className="tooltip">
-                            <img
-                                          alt=""
-                                          className="avatar tip"
-                                          src={undefined} />
-                            <span
-                                          className="tooltiptext" />
-              </a>
-</div>,
-            <div
-              className="message-container">
-              <h2
-                            className="fullName" />
-              <h5
-                            className="timestamp" />
-              <p
-                            className="message" />
-</div>,
-          ],
-          "className": "flex-container",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <a
-                className="tooltip">
-                <img
-                                alt=""
-                                className="avatar tip"
-                                src={undefined} />
-                <span
-                                className="tooltiptext" />
-</a>,
-              "className": "avatar-container",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <img
-                    alt=""
-                    className="avatar tip"
-                    src={undefined} />,
-                  <span
-                    className="tooltiptext" />,
-                ],
-                "className": "tooltip",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "alt": "",
-                    "className": "avatar tip",
-                    "src": undefined,
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": "img",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": undefined,
-                    "className": "tooltiptext",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": "span",
-                },
-              ],
-              "type": "a",
-            },
-            "type": "div",
-          },
           Object {
             "instance": null,
             "key": undefined,
@@ -333,8 +263,7 @@ ShallowWrapper {
               "children": Array [
                 <h2
                   className="fullName" />,
-                <h5
-                  className="timestamp" />,
+                undefined,
                 <p
                   className="message" />,
               ],
@@ -354,18 +283,7 @@ ShallowWrapper {
                 "rendered": null,
                 "type": "h2",
               },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "",
-                  "className": "timestamp",
-                },
-                "ref": null,
-                "rendered": "",
-                "type": "h5",
-              },
+              undefined,
               Object {
                 "instance": null,
                 "key": undefined,

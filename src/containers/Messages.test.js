@@ -11,7 +11,7 @@ describe('Messages component', ()=>{
     let messages ;
     const createMockStore = configureMockStore([thunk]);
     const message = {messages: [{messageId: 'mid', userId: 'uid', email: 'em'}], isFetching: false};
-    const mockStore = createMockStore(message);
+    const mockStore = createMockStore({message});
     
         beforeEach(()=> {
         messages = shallow(<Messages store={mockStore} />);
