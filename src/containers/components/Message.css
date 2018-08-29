@@ -72,11 +72,11 @@ a:focus{
   margin: 0px;
   padding: 0 px;
 }
+
 /* Tooltip container */
 .tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
 }
 
 /* Tooltip text */
@@ -84,7 +84,7 @@ a:focus{
   visibility: hidden;
   width: auto;
   background-color:rgb(180, 175, 175);
-  color: #fff;
+  color: rgb(102, 25, 25);
   text-align: center;
   padding: 5px;
   border-radius: 6px;
@@ -94,8 +94,8 @@ a:focus{
   z-index: 1;
   bottom: 125%;
   left: 50%;
-  margin-left: -60px;
-
+  margin-left: -70px;
+  
   /* Fade in tooltip */
   opacity: 0;
   transition: opacity 0.3s;
