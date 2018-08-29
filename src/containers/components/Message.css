@@ -9,7 +9,7 @@ li {
 p {
   margin: 5px;
 }
-.flex-container {
+.flexContainer {
   display: flex;
   padding:15px;
   margin:0px;
@@ -38,6 +38,7 @@ a:focus{
   background-image: url('defaultAvatar.png');
   background-size: cover;
   margin-right: 10px;
+  clip-path: circle();
 }
 
 .message-container{
