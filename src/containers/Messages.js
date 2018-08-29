@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
 import Message from './components/Message';
 import * as messageActions from '../reducers/messageActions';
@@ -7,16 +8,20 @@ import './Messages.css';
 export class Messages extends Component{
     constructor(props){
         super(props);
+        const {dispatch} = props;
+        this.boundActionCreators = bindActionCreators(messageActions, dispatch);
         this.state = {messages : []};
     }
 
     componentDidMount(){
-        this.props.getMessages();
+        let {dispatch} = this.props;
+        let action = messageActions.getMessagesAsync();
+        dispatch(action);
     }
 
     render(){
         const result = this.props.messages.map(m => {
-            return <Message key={m.messageId} {...m}/>});
+            return <Message key={m.messageId} {...m} {...this.boundActionCreators}/>});
         return(
             <div className="container">
                 <ul className="Messages">
@@ -31,9 +36,4 @@ const mapStateToProps = (state) => {
     return state.message;
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        getMessages : () => dispatch(messageActions.getMessagesAsync())
-    };
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Messages);
+export default connect(mapStateToProps)(Messages);
