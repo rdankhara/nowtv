@@ -53,7 +53,8 @@ Feel free to create new files to help you complete these tasks. Please ask befor
       - I would use sass for css
       - paging or virtulisation to limit amount of data,
       - filter functionality
-      - more nicer UI, 
+      - more nicer UI,
+      - cover more tests
       - organise files and folder nicely.
       automated end to end tests,
       I would use redux observable as it allows cancelling which helps saving rendering thread cpu cycle from rendering unwanted UI.

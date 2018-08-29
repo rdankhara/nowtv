@@ -5,7 +5,8 @@ import * as services from '../service';
 import * as messageActions from './messageActions';
 
 const createMockStore = configureMockStore([thunk]);
-const store = createMockStore({messages: [{messageId: 'mid', userId: 'uid', email: 'em'}]});
+const message = {messages: [{messageId: 'mid', userId: 'uid', email: 'em'}], isFetching: false};
+const store = createMockStore(message);
 const mockResponse = [{
     "messageId": "12356",
     "userId": "613651251",
