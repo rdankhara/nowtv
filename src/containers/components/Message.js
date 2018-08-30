@@ -1,19 +1,21 @@
 import React from 'react';
 import './Message.css';
-const Message = (props) => {
+
+//use destructuring syntex
+const Message = ({avatar, email, fullName, timestamp, message}) => {
     return(
         <li>
             <article className="flexContainer">
                 <a className="tooltip">
-                    <img src={props.avatar} alt="" className="avatar tip" />
-                    <span className="tooltiptext">{props.email}</span>
+                    <img src={avatar} alt="" className="avatar tip" />
+                    <span className="tooltiptext">{email}</span>
                 </a>
                 <div className="message-container">
-                    <h2 className="fullName">{props.fullName}</h2>
-                    { props.timestamp && 
-                        <h5 className="timestamp">{props.timestamp.toDateString()}</h5>
+                    <h2 className="fullName">{fullName}</h2>
+                    { timestamp && 
+                        <h5 className="timestamp">{timestamp.toDateString()}</h5>
                     }
-                    <p className="message">{props.message}</p>
+                    <p className="message">{message}</p>
                 </div>
             </article>
         </li>

@@ -32,8 +32,8 @@ export class Messages extends Component{
     }
 }
 
-const mapStateToProps = (state) => {
-    return state.message;
+const mapStateToProps = ({message}) => {
+    return message;
 }
 
 export default connect(mapStateToProps)(Messages);
