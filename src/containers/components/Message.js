@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Message.css';
 
-//use destructuring syntex
 const Message = ({avatar, email, fullName, timestamp, message}) => {
     return(
         <li>
@@ -20,6 +20,17 @@ const Message = ({avatar, email, fullName, timestamp, message}) => {
             </article>
         </li>
     );
+};
+
+Message.propTypes = {
+    fullName : PropTypes.string,
+    avatar: PropTypes.string,
+    email: PropTypes.string,
+    timestamp: PropTypes.instanceOf(Date)
+};
+
+Message.defaultProps = {
+    
 };
 
 export default Message;
