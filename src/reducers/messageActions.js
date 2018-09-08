@@ -1,18 +1,17 @@
 import * as actions from './actions';
 import {getChatMessages} from '../service';
 
-export const getMessagesAsync = () => {
+export const getMessagesAsync =  () => {
     
-    return dispatch => {
+    return async dispatch => {
 
         dispatch(actions.getMessageAction());
 
-        return getChatMessages()
-        .then(data => {
+        try {
+            const data = await getChatMessages();
             dispatch(actions.getMessageSuccess(data));
-        })
-        .catch(e => {
-            dispatch(actions.getMessageFailed(e.message));
-        });
+        } catch (error) {
+            dispatch(actions.getMessageFailed(error.message));
+        }
     };
 };

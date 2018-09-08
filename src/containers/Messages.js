@@ -15,8 +15,7 @@ export class Messages extends Component{
 
     componentDidMount(){
         let {dispatch} = this.props;
-        let action = messageActions.getMessagesAsync();
-        dispatch(action);
+        dispatch(messageActions.getMessagesAsync());
     }
 
     render(){

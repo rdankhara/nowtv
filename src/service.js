@@ -13,25 +13,13 @@ export default function getChatLog() {
   }]);
 };
 
-const extractChatMessages = (members, messages) => {
-    const membersMap = toMap(members, "id");
-    const resultMessages = messages.map(message => {
-    const member = membersMap.get(message.userId);
-
-      return {
-          messageId: message.id,
-          userId: message.userId,
-          message : message.message,
-          fullName: `${member.firstName} ${member.lastName}`,
-          timestamp: new Date(message.timestamp),
-          email: member.email,
-          avatar: member.avatar
-      };
-  });
-  return resultMessages;
+export const getChatMessages = async () => {
+    const result = extractChatMessages(...await Promise.all([getMembers(), getMessages()]))
+        .sort((a, b) => a.timestamp.valueOf() - b.timestamp.valueOf());
+        return result;
 }
 
-export const getChatMessages = () => {
+export const getChatMessagesPromise = () => {
     return new Promise(resolve => {
         Promise.all([getMembers(), getMessages()])
         .then(asyncResult => {
@@ -40,4 +28,22 @@ export const getChatMessages = () => {
           resolve(result);
         });
     });
+}
+
+const extractChatMessages = (members, messages) => {
+  const membersMap = toMap(members, "id");
+  const resultMessages = messages.map(message => {
+  const member = membersMap.get(message.userId);
+
+    return {
+        messageId: message.id,
+        userId: message.userId,
+        message : message.message,
+        fullName: `${member.firstName} ${member.lastName}`,
+        timestamp: new Date(message.timestamp),
+        email: member.email,
+        avatar: member.avatar
+    };
+});
+return resultMessages;
 }
