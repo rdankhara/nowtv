@@ -11,3 +11,5 @@ export const rootReducer = combineReducers({
 
 export const appState = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
 
+
+

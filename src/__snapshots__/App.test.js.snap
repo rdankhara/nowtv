@@ -12,7 +12,7 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "children": <article>
         <header>
@@ -24,13 +24,6 @@ ShallowWrapper {
                 <Connect(Messages) />
         </main>
 </article>,
-      "store": Object {
-        "dispatch": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-        Symbol(observable): [Function],
-      },
     },
     "ref": null,
     "rendered": Object {
@@ -102,7 +95,7 @@ ShallowWrapper {
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": <article>
           <header>
@@ -114,13 +107,6 @@ ShallowWrapper {
                     <Connect(Messages) />
           </main>
 </article>,
-        "store": Object {
-          "dispatch": [Function],
-          "getState": [Function],
-          "replaceReducer": [Function],
-          "subscribe": [Function],
-          Symbol(observable): [Function],
-        },
       },
       "ref": null,
       "rendered": Object {
