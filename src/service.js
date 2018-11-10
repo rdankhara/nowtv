@@ -13,37 +13,36 @@ export default function getChatLog() {
   }]);
 };
 
-export const getChatMessages = async () => {
-    const result = extractChatMessages(...await Promise.all([getMembers(), getMessages()]))
-        .sort((a, b) => a.timestamp.valueOf() - b.timestamp.valueOf());
-        return result;
+const extractChatMessages = (members, messages) => {
+  const membersMap = toMap(members, "id");
+  const resultMessages = messages.map(({userId, id, message, timestamp}) => {
+      const {firstName, lastName, email, avatar} = membersMap.get(userId);
+        return {
+            messageId: id,
+            userId: userId,
+            message :message,
+            fullName: `${firstName} ${lastName}`,
+            timestamp: new Date(timestamp),
+            email: email,
+            avatar: avatar
+        };
+  });
+return resultMessages;
 }
 
 export const getChatMessagesPromise = () => {
-    return new Promise(resolve => {
-        Promise.all([getMembers(), getMessages()])
-        .then(asyncResult => {
-          var result = extractChatMessages(...asyncResult)
-            .sort((a, b) => a.timestamp.valueOf() - b.timestamp.valueOf());
-          resolve(result);
-        });
-    });
+  return new Promise(resolve => {
+      Promise.all([getMembers(), getMessages()])
+      .then(asyncResult => {
+        var result = extractChatMessages(...asyncResult)
+          .sort((a, b) => a.timestamp.valueOf() - b.timestamp.valueOf());
+        resolve(result);
+      });
+  });
 }
 
-const extractChatMessages = (members, messages) => {
-  const membersMap = toMap(members, "id");
-  const resultMessages = messages.map(message => {
-  const member = membersMap.get(message.userId);
-
-    return {
-        messageId: message.id,
-        userId: message.userId,
-        message : message.message,
-        fullName: `${member.firstName} ${member.lastName}`,
-        timestamp: new Date(message.timestamp),
-        email: member.email,
-        avatar: member.avatar
-    };
-});
-return resultMessages;
+export const getChatMessages = async () => {
+  const result = extractChatMessages(...await Promise.all([getMembers(), getMessages()]))
+      .sort((a, b) => a.timestamp.valueOf() - b.timestamp.valueOf());
+      return result;
 }
