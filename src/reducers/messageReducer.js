@@ -10,13 +10,13 @@ export const messageReducer = (state = initialState, action) => {
     let newState;
     switch(action.type){
         case consts.GET_MESSAGE_INIT:
-            newState = Object.assign({}, state);
-            newState.isFetching = true;
+            newState = Object.assign({}, state, {isFetching: true});
             break;
         case consts.GET_MESSAGE_SUCCESS:
-            newState = Object.assign({}, state);
-            newState.isFetching = false;
-            newState.messages = action.payload;
+            newState = Object.assign({}, state, {
+                isFetching : false,
+                messages : action.payload
+            });
             break;
         default:
             newState = state;
